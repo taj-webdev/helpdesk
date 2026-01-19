@@ -1,0 +1,7 @@
+RewriteEngine On
+
+# Jika file atau folder ada di /public, jangan redirect ke root
+RewriteCond %{REQUEST_URI} !^/public/
+
+# Redirect semua ke folder public
+RewriteRule ^(.*)$ public/$1 [L,QSA]
